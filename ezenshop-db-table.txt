@@ -1,0 +1,110 @@
+create table customers (
+c_id int unsigned not null auto_increment,
+c_name varchar(10) not null,
+c_password char(60) binary not null,
+c_email varchar(20) not null,
+c_tel varchar(16),
+primary key (c_id))
+auto_increment=100001 default charset=utf8;
+
+create table products (
+p_id int unsigned not null auto_increment,
+p_name varchar(20) not null,
+p_unitPrice int default 0,
+p_imgName varchar(80),
+p_description varchar(256),
+primary key (p_id))
+auto_increment=300001 default charset=utf8;
+
+create table admins (
+a_id int unsigned not null auto_increment,
+a_name varchar(10) not null,
+a_password char(60) binary not null,
+a_dept varchar(20) not null,
+a_tel varchar(16),
+primary key (a_id))
+auto_increment=900001 default charset=utf8;
+
+create table orders (
+ o_id int unsigned not null auto_increment,
+ o_customerId int unsigned not null,
+ o_date datetime not null default current_timestamp,
+ o_price int default 0,
+ primary key (o_id),
+ foreign key (o_customerId) references customers(c_id))
+auto_increment=500001 default charset=utf8;
+
+create table sold_products (
+s_orderId int unsigned not null,
+s_productId int unsigned not null,
+s_quantity int default 0,
+primary key (s_orderId, s_productId),
+foreign key (s_orderId) references orders(o_id),
+foreign key (s_productId) references products(p_id));
+
+
+//
+
+
+
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('방탄소년단 앨범', 30000, '../img/culture/album1.jpg', 'LOVE YOURSELF');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('신화 앨범', 50000, '../img/culture/album3.jpg', '신화 20주년 기념앨범');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('아이즈원 앨범', 25000, '../img/culture/album4.jpg', '아이즈원 데뷔앨범');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('21세기를 위한 21가지 제언', 20000, '../img/culture/book1.jpg', '<사피엔스>유발 하라리의 신작');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('신과함께시리즈', 50000, '../img/culture/book2.jpg', '영화화까지! 유호민 작가의 신과함께');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('살인의문세트', 30000, '../img/culture/book4.jpg', '저자 히가시노게이고');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('지킬앤하이드', 150000, '../img/culture/m1.jpg', '초특급 캐스팅으로 돌아온 지킬앤하이드');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('넌센스', 80000, '../img/culture/m2.jpg', '최고의 어린이 뮤지컬');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('시카고', 100000, '../img/culture/m3.jpg', '세계인이 선택한 뮤지컬 시카고');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('오당신이잠든사이에', 90000, '../img/culture/m4.jpg', '대학로 창작 뮤지컬');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('남성맨투맨', 50000, '../img/clothe/a1.jpg', '남성용 기모 맨투맨');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('남성후드집업', 70000, '../img/clothe/a2.jpg', '남성용 후드 집업');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('남성가디건', 45000, '../img/clothe/a3.jpg', '남성용 가디건');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('항공점퍼', 110000, '../img/clothe/a4.jpg', '거위털이 들어있는 따뜻한 항공점퍼');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('패딩', 250000, '../img/clothe/a5.jpg', '보온효과가 뛰어난 패딩점퍼');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('남성슬랙스', 45000, '../img/clothe/a6.jpg', '신축성이 뛰어나 편안한 슬랙스');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('트레이닝복반바지', 30000, '../img/clothe/a7.jpg', '활동하기 좋은 반바지 트레이닝복');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('청바지', 70000, '../img/clothe/a8.jpg', '마감처리에 신경쓴 튼튼한 청바지');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('운동화', 80000, '../img/clothe/a9.jpg', '디자인과 발의 편함을 둘다 갖춘 신발');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('남성 구두', 90000, '../img/clothe/a10.jpg', '발이 편안한 구두');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('뽀로로인형', 30000, '../img/toy/1.jpg', '뽀로로 애니매이션 캐릭터 인형');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('캐릭터 전자피아노', 25000, '../img/toy/2.jpg', '피아노소리가 나는 장난감');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('동물모양맞추기놀이', 35000, '../img/toy/3.jpg', '무로 만든 장난감, 동물모양을 맞추기');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('볼링놀이', 30000, '../img/toy/4.jpg', '플라스틱으로 만들어진 볼링 장난감');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('피카츄 태엽인형', 20000, '../img/toy/5.jpg', '인형뒤쪽에 태엽을 감으면 걸어가는 인형');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('철제굴삭기', 50000, '../img/toy/6.jpg', '철제 부품으로 조립하여 굴살기 만들기');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('큐브', 7000, '../img/toy/7.jpg', '모든 면이 같은색으로 만드는 큐브놀이');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('간이 농구', 20000, '../img/toy/8.jpg', '벽에 걸어 어느곳에서든 농구놀이를 할 수 있다.');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('다트놀이', 30000, '../img/toy/9.jpg', '다트를 할 수 있는 장난감');
+insert into products(p_name, p_unitPrice, p_imgName, p_description) values
+('낚시놀이', 45000, '../img/toy/10.jpg', '움직이는 장난감 물고기를 낚시하는 놀이');
+
