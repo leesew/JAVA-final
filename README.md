@@ -1,6 +1,6 @@
 # JAVA-final
  This is the process of creating a homepage for a shopping mall based on "Java"
-
+<hr>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,8 +9,8 @@
 
 </head>
 <body>
-	<h3>JAVA로 홈페이지 만들기</h3>
+	<h3> creating a homepage in java </h3>
 	
-   <p id="list">JAVA와 MySQL을 연동하여 쇼핑물을 구축하였습니다. </p>
+   <p id="list">I used the Eclipse and MySQL program together</p>
 </body>
 </html>
