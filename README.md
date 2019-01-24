@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h3>JAVA로 홈페이지 만들기</h3>
-	<hr>
+	
    <p id="list">JAVA와 MySQL을 연동하여 쇼핑물을 구축하였습니다. </p>
 </body>
 </html>
