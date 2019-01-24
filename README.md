@@ -6,14 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-  <style>
-		#list {background : aliceblue;}
-		p {color : brown;
-		   font-family: "Lucida console", Serif, 10px;}
-		span {font-size : 1.5em;
-		      text-decoration: underline;}
-	</style>
+
 </head>
 <body>
 	<h3>JAVA로 홈페이지 만들기</h3>
